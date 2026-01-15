@@ -1,0 +1,545 @@
+:root {
+  --bg: #000;
+  --bg-strong: #0a0a0a;
+  --card: rgba(0, 0, 0, 0.7);
+  --accent: #fbb03b;
+  --accent-deep: #c8871e;
+  --accent-dark: #422d0b;
+  --lime: #aaff00;
+  --muted: #a3a3a3;
+  --danger: #ea1d2c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: url("https://vivitrick.com/wp-content/uploads/2024/12/02-1-1.webp");
+  background-repeat: repeat;
+  background-size: 360px;
+}
+
+.top-banner {
+  position: fixed;
+  inset: 0 0 auto 0;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 12px;
+  z-index: 1000;
+  font-family: "Roboto", "Poppins", sans-serif;
+}
+
+.top-banner .highlight {
+  color: #ffff00;
+}
+
+.content {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero,
+.mockup,
+.cta,
+.faq {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.hero {
+  text-align: center;
+  background: #000;
+}
+
+.hero-spacer {
+  height: 20px;
+}
+
+.hero-logo {
+  width: min(380px, 78vw);
+  margin: 0 auto 24px;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 4.6rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 12px auto 24px;
+  max-width: 900px;
+}
+
+.hero-title p {
+  margin: 0;
+}
+
+.hero-image {
+  width: min(420px, 82vw);
+  margin: 0 auto 24px;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 2.3vw, 1.4rem);
+  color: var(--muted);
+  font-weight: 600;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marquee {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  padding: 14px 0;
+  background: linear-gradient(120deg, var(--accent-dark), var(--accent));
+  transform: rotate(5deg) scale(1.01);
+  position: relative;
+}
+
+.marquee--two {
+  background: linear-gradient(120deg, var(--accent), var(--accent-dark));
+  transform: rotate(-5deg) scale(1.01);
+  margin-top: -32px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: marquee 12s linear infinite;
+  font-family: "Roboto", "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.marquee--two .marquee-track {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.mockup {
+  background: #000;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), #000),
+    url("https://vivitrick.com/wp-content/uploads/2024/12/02-1-1.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.arrow {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 3.1rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  margin: 0 auto 20px;
+  max-width: 900px;
+}
+
+.section-title p {
+  margin: 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 12px 6px 18px;
+}
+
+.carousel img {
+  width: min(240px, 60vw);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  scroll-snap-align: start;
+}
+
+.section-text {
+  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  font-style: italic;
+  max-width: 900px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.section-text p {
+  margin: 0 0 12px;
+}
+
+.desire-images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 24px;
+}
+
+.desire-images img {
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.cta {
+  background: #000;
+  border-radius: 18px;
+  padding: 40px 20px;
+  border: 1px solid #111;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cta-title {
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.cta-title p {
+  margin: 0;
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.price-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #0f0f0f;
+  position: relative;
+}
+
+.price-card--basic {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.price-card--pro {
+  border: 1px solid rgba(251, 176, 59, 0.6);
+  box-shadow: 0 0 30px rgba(251, 176, 59, 0.2);
+}
+
+.price-card__label {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.price-card__label p,
+.price-card__desc p {
+  margin: 0;
+}
+
+.price-card__desc {
+  text-align: center;
+  margin: 12px 0 18px;
+  font-weight: 600;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: var(--accent);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 28px;
+  font-weight: 600;
+}
+
+.feature-list li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent), var(--accent-deep));
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+}
+
+.price {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent);
+  margin: 16px 0;
+}
+
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 18px;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  color: #fff;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(251, 176, 59, 0.4);
+}
+
+.cta-button--primary {
+  background: linear-gradient(180deg, #00ff00, #008000);
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.attention {
+  margin-top: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background: #8c9191;
+  margin: 14px 0;
+}
+
+.faq {
+  background: #000;
+  padding: 48px 20px 60px;
+  border-top: 1px solid #111;
+  text-align: center;
+}
+
+.accordion {
+  width: min(900px, 100%);
+  margin: 20px auto 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.accordion-item {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.accordion-trigger {
+  width: 100%;
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.accordion-panel {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  overflow: hidden;
+  padding: 0 18px;
+  text-align: left;
+}
+
+.accordion-panel.open {
+  max-height: 240px;
+  opacity: 1;
+  padding-bottom: 16px;
+}
+
+.button-preco {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite, glow 1.5s infinite alternate;
+}
+
+.button-preco:hover {
+  background: linear-gradient(180deg, #00ff00, #008000);
+  animation: pulse 1.5s ease-in-out infinite, glowhover 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(251, 176, 59, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 176, 59, 1);
+  }
+}
+
+@keyframes glowhover {
+  0%,
+  100% {
+    box-shadow: 0 0 15px #25a837;
+  }
+  50% {
+    box-shadow: 0 0 30px #25a837;
+  }
+}
+
+.footer {
+  background: linear-gradient(90deg, #241700, #3c270c);
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.from-left {
+  transform: translateX(-30px);
+}
+
+.reveal.from-right {
+  transform: translateX(30px);
+}
+
+.reveal.from-top {
+  transform: translateY(-30px);
+}
+
+.reveal.from-bottom {
+  transform: translateY(30px);
+}
+
+.reveal.from-left.is-visible,
+.reveal.from-right.is-visible,
+.reveal.from-top.is-visible,
+.reveal.from-bottom.is-visible {
+  transform: translate(0, 0);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding: 40px 20px 20px;
+  }
+
+  .hero-image {
+    width: min(520px, 60vw);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .top-banner {
+    font-size: 0.72rem;
+  }
+
+  .accordion-panel.open {
+    max-height: 320px;
+  }
+}
